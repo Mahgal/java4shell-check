@@ -1,0 +1,10 @@
+java
+security
+cve-2026-114938
+java4shell
+openjdk
+vulnerability-scanner
+rce
+devops
+cli
+python

@@ -1,0 +1,19 @@
+[demo 1/2] vulnerable fixture — openjdk 17.0.21 on x86-64 with AVX-512 VBMI
+Java: openjdk version "17.0.21" (fixture)
+CPU: x86_64, AVX-512 VBMI present (avx512f: yes, avx512bw: yes, avx512vbmi: yes, bmi2: yes; from fixture)
+Verdict: VULNERABLE
+  Java 17.0.21 is in the affected range (up to 17.0.21.0.3)
+  CPU has AVX-512 VBMI, so the vulnerable decoder path is reachable.
+  Fix: upgrade to 17.0.21.1 (Oracle) / 17.0.21.1.2 (Corretto).
+  Mitigation until patched: -XX:-UseBASE64Intrinsics (or -XX:UseAVX=2 on x86-64 only).
+
+[demo 2/2] patched fixture — openjdk 21.0.13.1 on x86-64 with AVX-512 VBMI
+Java: openjdk version "21.0.13.1" (fixture)
+CPU: x86_64, AVX-512 VBMI present (avx512f: yes, avx512bw: yes, avx512vbmi: yes, bmi2: yes; from fixture)
+Verdict: PATCHED
+  Java 21.0.13.1 is at or above the fixed release 21.0.13.1
+  Fixed build — the AVX-512 VBMI Base64 decoder flaw is closed.
+  Restart every JVM so the fixed build is the one running.
+
+Demo uses labelled fixtures only — not this machine.
+Run without --demo to check this machine.
